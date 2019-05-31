@@ -8,7 +8,7 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "build": "tsc -p tsconfig.json",
     "test": "gulp",
-    "test:node": "tsc && nyc --extension=.ts --reporter=html --reporter=text mocha --timeout=3000 test/*.spec.js",
+    "test:node": "tsc && nyc --extension=.ts --reporter=lcov --reporter=html --reporter=text mocha",
     "test:browser": "tsc && karma start karma.conf.js",
     "tslint": "tslint --project tsconfig.json --config tslint.json",
     "watch:tslint": "gulp dev"
