@@ -8,11 +8,9 @@ node_js:
 after_success:
 - npm run coveralls
 addons:
-  chrome: stable
-before_script:
-- export DISPLAY=:99.0
-- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-- sh -e /etc/init.d/xvfb start
+ chrome: stable
+services:
+  - xvfb
 env:
   global:
   - secure: Vn6vXz/FdPTvK29yGqHyq7Y2EUXiXzQPcC52UvVAqbrmHi2mjIjMY9SfGNhidr21/yh8zN7aoIDKgSV1uVL8Hj7QPKqL2S8yrFAZX5GJybtlWr8YYQu1AgqaNtptMc/XFJoNi/xfXK7XNxmMXGweEI9N/JuebiyuTvVpOlIu8V6s2N4wmla2AfaKeBpLQOjcmGGriIiPjW2x4b4Hzqzb7zc/fyWaAHMMNEdEK+xfD2q2AxbEoudaxpt3dTc5XIr4m1nnw/L33djAi5AwyQ0jeXAIuHZwIILuk1AwoAbsObDbIYVZnMbCslgDN9cNbQYtJbQKPUZzWirS3dNVO2/bpJZ448038To1CPRVGfDh4kvvfQht7siaps5Nze8juKF6eNRc182zU92VmQbzCnXTHwU5peXD/4B9uqT0ImJgLBn+ffcoUhqyiod0a6mvNIxIEfd8xc2B0oolgRClDzlx/lZrFMGTIPF1J0gqtANMn/6wnojty/573Uxt5vUFcSz8U5VLbb95zWUvmDwiVwHT4lFGyUIlG9NK12AuMbfGZ6EqZiFcINzs27z2hSZySzsUShV2xuYKngr7hD3eKaiRqbQPISs4PaqLCcVF70BSpA0XtNT6BW2WSjRHP+FqawNskRvazNBrwCxc8yjEOvUBQyqgut9WXGvWjouZipPiVXk=
