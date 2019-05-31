@@ -4,6 +4,8 @@
   "description": "Toolkit of crossing chain from Stream chain to SWTC chain",
   "main": "lib/index.js",
   "scripts": {
+    "deploy": "./publish.sh",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "build": "tsc -p tsconfig.json",
     "test": "gulp",
     "test:node": "tsc && nyc --extension=.ts --reporter=html --reporter=text mocha --timeout=3000 test/*.spec.js",
