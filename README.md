@@ -44,7 +44,7 @@ const testSecret = "vaFtuK2skLZUCcqHvsFk2BMKpzQmJbQsXa";
 // Don't change it. The fingate address is it for now.
 const destination = "vn4K541zh3vNHHJJaos2Poc4z3RiMHLHcK";
 
-const testDemo = {
+const testMemo = {
     jtaddress: "jpgWGpfHz8GxqUjz5nb6ej8eZJQtiF6KhH"
 }
 
@@ -53,7 +53,7 @@ const amount = 1;
 try {
     instance.init()
         .connect()
-    const hash = await instance.transfer(testSecret, destination, amount, testDemo);
+    const hash = await instance.transfer(testSecret, destination, amount, testMemo);
     console.log(hash);
 } catch (error) {
     console.log(error);
