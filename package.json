@@ -21,7 +21,7 @@
     "lib"
   ],
   "dependencies": {
-    "@types/node": "^11.12.2",
+    "@types/node": "^12.0.4",
     "bignumber.js": "^9.0.0",
     "jcc_wallet": "^0.3.5"
   },
@@ -47,7 +47,7 @@
     "nyc": "^13.0.0",
     "semver": "^6.1.1",
     "sinon": "^7.3.1",
-    "ts-loader": "^5.3.3",
+    "ts-loader": "^6.0.2",
     "tslint": "^5.14.0",
     "typescript": "^3.3.4000",
     "update": "^0.7.4",

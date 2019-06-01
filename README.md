@@ -14,9 +14,15 @@ Toolkit of crossing chain from [Stream chain](https://labs.stream/cn/) to [SWTC 
 
 ## Description
 
-Transfer token automatically from [Stream](https://labs.stream/cn/) chain to [SWTC](http://www.swtc.top/#/) chain. Support STM tokens.
+Transfer token automatically from [Stream](https://labs.stream/cn/) chain to [SWTC](http://www.swtc.top/#/) chain. Support STM token.
 
-e.g. you transfer 1 `STM` to [Stream Fingate](https://graph.labs.stream/#/graph/vn4K541zh3vNHHJJaos2Poc4z3RiMHLHcK) from your stream address if success, the contract will automatically transfer 1 `JSTM` to your swtc address from [jingtum fingate](https://explorec9d536e.jccdex.cn/#/wallet/?wallet=japp9xxt2VHpRwHsoa76GWoQj1VdsjcZQJ) in a few minutes.
+e.g. you transfer 1 `STM` to [Stream Fingate](https://graph.labs.stream/#/graph/vn4K541zh3vNHHJJaos2Poc4z3RiMHLHcK) from your stream address if success, the contract will automatically transfer 1 `JSTM` to your swtc address from [Jingtum Fingate](https://explorec9d536e.jccdex.cn/#/wallet/?wallet=japp9xxt2VHpRwHsoa76GWoQj1VdsjcZQJ) in a few minutes.
+
+## Installtion
+
+```shell
+npm install jcc-stream-utils
+```
 
 ## Usage
 
@@ -33,19 +39,21 @@ const instance = new StreamFingate({
     secure: true
 });
 
-let testSecret = "vaFtuK2skLZUCcqHvsFk2BMKpzQmJbQsXa";
+const testSecret = "vaFtuK2skLZUCcqHvsFk2BMKpzQmJbQsXa";
 
 // Don't change it. The fingate address is it for now.
-let destination = "vn4K541zh3vNHHJJaos2Poc4z3RiMHLHcK";
+const destination = "vn4K541zh3vNHHJJaos2Poc4z3RiMHLHcK";
 
-let testDemo = {
+const testDemo = {
     jtaddress: "jpgWGpfHz8GxqUjz5nb6ej8eZJQtiF6KhH"
 }
+
+const amount = 1;
 
 try {
     instance.init()
         .connect()
-    let hash = await instance.transfer(testSecret, destination, 1, testDemo);
+    const hash = await instance.transfer(testSecret, destination, amount, testDemo);
     console.log(hash);
 } catch (error) {
     console.log(error);
