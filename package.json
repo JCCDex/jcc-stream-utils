@@ -11,7 +11,8 @@
     "test:node": "tsc && nyc --extension=.ts --reporter=lcov --reporter=html --reporter=text mocha",
     "test:browser": "tsc && karma start karma.conf.js",
     "tslint": "tslint --project tsconfig.json --config tslint.json",
-    "watch:tslint": "gulp dev"
+    "watch:tslint": "gulp dev",
+    "compile": "webpack"
   },
   "repository": {
     "type": "git",
@@ -53,7 +54,7 @@
     "update": "^0.7.4",
     "webpack": "^4.29.6",
     "webpack-bundle-analyzer": "^3.1.0",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.2"
   },
   "keywords": [
     "cross-chain",

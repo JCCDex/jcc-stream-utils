@@ -4,41 +4,41 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 const pkg = require("./package.json");
 
 const config = {
-    entry: "./src/index.ts",
-    output: {
-        filename: "jcc-stream-utils." + pkg.version + ".js",
-        path: path.resolve(__dirname, "./dist"),
-        libraryTarget: "umd"
-    },
-    target: "web",
-    resolve: {
-        extensions: [".js", ".ts"],
-        alias: {
-            "bn.js": path.resolve(__dirname, "node_modules/bn.js"),
-            "bignumber.js": path.resolve(__dirname, "node_modules/bignumber.js")
-        }
-    },
-    mode: process.env.MODE === "dev" ? 'development' : "production",
-    node: {
-        fs: "empty",
-        tls: "empty",
-        "child_process": "empty",
-        net: "empty"
-    },
-    module: {
-        rules: [{
-            test: /\.tsx?$/,
-            use: "ts-loader",
-            exclude: /node_modules/
-        }]
-    },
-    plugins: [
-        new DuplicatePackageCheckerPlugin()
-    ]
+  entry: "./src/index.ts",
+  output: {
+    filename: "jcc-stream-utils." + pkg.version + ".js",
+    path: path.resolve(__dirname, "./dist"),
+    libraryTarget: "umd"
+  },
+  target: "web",
+  resolve: {
+    extensions: [".js", ".ts"],
+    alias: {
+      "bn.js": path.resolve(__dirname, "node_modules/bn.js"),
+      "elliptic": path.resolve(__dirname, "node_modules/jcc_jingtum_base_lib/node_modules/elliptic/")
+    }
+  },
+  mode: process.env.MODE === "dev" ? 'development' : "production",
+  node: {
+    fs: "empty",
+    tls: "empty",
+    "child_process": "empty",
+    net: "empty"
+  },
+  module: {
+    rules: [{
+      test: /\.tsx?$/,
+      use: "ts-loader",
+      exclude: /node_modules/
+    }]
+  },
+  plugins: [
+    new DuplicatePackageCheckerPlugin()
+  ]
 };
 
 if (process.env.REPORT === "true") {
-    config.plugins.push(new BundleAnalyzerPlugin())
+  config.plugins.push(new BundleAnalyzerPlugin())
 }
 
 module.exports = config;
