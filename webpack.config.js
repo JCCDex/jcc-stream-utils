@@ -21,7 +21,9 @@ const config = {
     mode: process.env.MODE === "dev" ? 'development' : "production",
     node: {
         fs: "empty",
-        tls: "empty"
+        tls: "empty",
+        "child_process": "empty",
+        net: "empty"
     },
     module: {
         rules: [{
