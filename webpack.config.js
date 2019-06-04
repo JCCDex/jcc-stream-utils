@@ -1,15 +1,16 @@
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
 const path = require("path");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const pkg = require("./package.json");
 
 const config = {
     entry: "./src/index.ts",
     output: {
-        filename: "stream-fingate.min.js",
+        filename: "jcc-stream-utils." + pkg.version + ".js",
         path: path.resolve(__dirname, "./dist"),
         libraryTarget: "umd"
     },
-    target: "node",
+    target: "web",
     resolve: {
         extensions: [".js", ".ts"],
         alias: {
