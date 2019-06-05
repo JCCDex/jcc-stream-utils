@@ -8,6 +8,7 @@ const config = {
   output: {
     filename: "jcc-stream-utils." + pkg.version + ".js",
     path: path.resolve(__dirname, "./dist"),
+    library: "jcc_stream_utils",
     libraryTarget: "umd"
   },
   target: "web",

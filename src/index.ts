@@ -1,5 +1,5 @@
-import streamFingate from "./streamFingate";
+import StreamFingate from "./streamFingate";
 
-export default streamFingate;
+export default StreamFingate;
 
-export { streamFingate };
+export { StreamFingate };

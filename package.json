@@ -12,7 +12,8 @@
     "test:browser": "tsc && karma start karma.conf.js",
     "tslint": "tslint --project tsconfig.json --config tslint.json",
     "watch:tslint": "gulp dev",
-    "compile": "webpack"
+    "compile": "webpack",
+    "replace:stm": "cp ./stm/stm-main.js ./node_modules/stm-lib/src/js/stream/index.js"
   },
   "repository": {
     "type": "git",
