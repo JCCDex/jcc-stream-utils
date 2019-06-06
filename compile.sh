@@ -1,7 +1,7 @@
 #!/bin/bash
 
 npm run replace:stm
-
+npm run build
 ./node_modules/cross-env/dist/bin/cross-env-shell.js MODE=$1 REPORT=$2 webpack
 
 # ./compile.sh dev true
