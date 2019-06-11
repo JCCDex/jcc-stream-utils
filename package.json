@@ -1,8 +1,9 @@
 {
   "name": "jcc-stream-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Toolkit of crossing chain from Stream chain to SWTC chain",
   "main": "lib/index.js",
+  "unpkg": "dist/jcc-stream-utils.min.js",
   "scripts": {
     "deploy": "./publish.sh",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
@@ -20,7 +21,8 @@
     "url": "git+https://github.com/JCCDex/jcc-stream-utils.git"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "dependencies": {
     "@types/node": "^12.0.4",

@@ -13,6 +13,8 @@ import { isValidAmount, isValidMemo, isValidStreamAddress, isValidStreamSecret, 
  */
 export default class StreamFingate {
 
+    public readonly version = "0.1.1";
+
     private _remote: Remote = null;
 
     private _trace: boolean = false;
@@ -133,6 +135,28 @@ export default class StreamFingate {
     public disconnect(): StreamFingate {
         this._remote.disconnect();
         return this;
+    }
+
+    /**
+     * request balance of STM
+     *
+     * @param {string} address
+     * @returns {Promise<string>}
+     * @memberof StreamFingate
+     */
+    public getBalance(address: string): Promise<string> {
+        return new Promise((resolve, reject) => {
+            this._remote.requestAccountInfo({
+                account: address
+            }, (err, res) => {
+                if (err) {
+                    return reject(err);
+                }
+                const bn = new BigNumber(res.account_data.Balance);
+                const balance = bn.dividedBy(10 ** this._decimals);
+                return resolve(balance.toString(10));
+            });
+        });
     }
 
     /**
