@@ -192,7 +192,10 @@ export default class StreamFingate {
                 if (error) {
                     return reject(error);
                 }
-                return resolve(raw.tx_json.hash);
+                if (raw.engine_result === "tesSUCCESS") {
+                    return resolve(raw.tx_json.hash);
+                }
+                return reject(new Error(raw.engine_result_message));
             });
         });
     }

@@ -208,6 +208,7 @@ describe("test stream fingate", function() {
     it("transfer success", function(done) {
       let stub = sandbox.stub(Transaction.prototype, "submit");
       stub.yields(null, {
+        engine_result: "tesSUCCESS",
         tx_json: {
           hash: "123456"
         }
@@ -236,6 +237,23 @@ describe("test stream fingate", function() {
         expect(args2[1]).to.equal("%7B%22jtaddress%22:%22jpgWGpfHz8GxqUjz5nb6ej8eZJQtiF6KhH%22%7D");
         expect(hash).to.equal("123456");
         done();
+        sandbox.restore();
+      });
+    })
+
+    it("transfer fail", function(done) {
+      let stub = sandbox.stub(Transaction.prototype, "submit");
+      stub.yields(null, {
+        engine_result: "tecUNFUNDED_PAYMENT",
+        engine_result_message: 'Insufficient STM balance to send.'
+      });
+      inst.remote._ledger_current_index = 0;
+      inst.transfer(testSecret, "vn4K541zh3vNHHJJaos2Poc4z3RiMHLHcK", 0.1, {
+        jtaddress: "jpgWGpfHz8GxqUjz5nb6ej8eZJQtiF6KhH"
+      }).catch(error => {
+        expect(error.message).to.equal("Insufficient STM balance to send.");
+        done();
+        sandbox.restore();
       });
     })
   })
