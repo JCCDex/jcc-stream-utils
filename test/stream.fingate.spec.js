@@ -170,12 +170,12 @@ describe("test stream fingate", function() {
     })
 
     it("throw error if the amount is invalid", function() {
-      expect(() => inst.transfer(testSecret, testAddress, 0, {
+      expect(() => inst.transfer(testSecret, testAddress, "0", {
         jtaddress: "111"
       })).throws("0 is invalid amount.")
     })
 
-    it("throw error if the amount is invalid", function() {
+    it("throw error if the jingtum address is invalid", function() {
       expect(() => inst.transfer(testSecret, testAddress, 1, {
         jtaddress: "111"
       })).throws("111 is invalid jingtum address in memo.")

@@ -164,13 +164,13 @@ export default class StreamFingate {
      *
      * @param {string} secret stream secret
      * @param {string} destination address of stream fingate
-     * @param {number} value transfer amount
+     * @param {string} value transfer amount
      * @param {IMemo} memo transfer memo
      * @returns {Promise<string>} resolve hash if success
      * @memberof StreamFingate
      */
     @validate
-    public async transfer(@isValidStreamSecret secret: string, @isValidStreamAddress destination: string, @isValidAmount value: number, @isValidMemo memo: IMemo): Promise<string> {
+    public async transfer(@isValidStreamSecret secret: string, @isValidStreamAddress destination: string, @isValidAmount value: string, @isValidMemo memo: IMemo): Promise<string> {
         return new Promise((resolve, reject) => {
             const address = StreamFingate.getAddress(secret);
             let amount: any;
