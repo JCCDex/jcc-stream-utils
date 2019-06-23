@@ -24,6 +24,14 @@ e.g. you transfer 1 `STM` to [Stream Fingate](https://graph.labs.stream/#/graph/
 npm install jcc-stream-utils
 ```
 
+## CDN
+
+`jcc_stream_utils` as a global variable
+
+```javascript
+<script src="https://unpkg.com/jcc-stream-utils/dist/jcc-stream-utils.min.js"></script>
+```
+
 ## Usage
 
 ```javascript
