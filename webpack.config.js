@@ -15,8 +15,7 @@ const config = {
   resolve: {
     extensions: [".js", ".ts"],
     alias: {
-      "bn.js": path.resolve(__dirname, "node_modules/bn.js"),
-      "elliptic": path.resolve(__dirname, "node_modules/jcc_jingtum_base_lib/node_modules/elliptic/")
+      "bn.js": path.resolve(__dirname, "node_modules/bn.js")
     }
   },
   mode: process.env.MODE === "dev" ? 'development' : "production",

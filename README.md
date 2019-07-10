@@ -26,7 +26,7 @@ npm install jcc-stream-utils
 
 ## CDN
 
-`jcc_stream_utils` as a global variable
+`jcc_stream_utils` as a global variable.
 
 ```javascript
 <script src="https://unpkg.com/jcc-stream-utils/dist/jcc-stream-utils.min.js"></script>
@@ -69,3 +69,7 @@ try {
     instance.disconnect();
 }
 ```
+
+## API
+
+see [API.md](https://github.com/JCCDex/jcc-stream-utils/blob/master/docs/API.md)
