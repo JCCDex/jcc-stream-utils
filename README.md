@@ -8,7 +8,6 @@ Toolkit of crossing chain from [Stream chain](https://labs.stream/cn/) to [SWTC 
 [![Build Status](https://travis-ci.com/JCCDex/jcc-stream-utils.svg?branch=master)](https://travis-ci.com/JCCDex/jcc-stream-utils)
 [![Coverage Status](https://coveralls.io/repos/github/JCCDex/jcc-stream-utils/badge.svg?branch=master)](https://coveralls.io/github/JCCDex/jcc-stream-utils?branch=master)
 [![Dependencies](https://img.shields.io/david/JCCDex/jcc-stream-utils.svg?style=flat-square)](https://david-dm.org/JCCDex/jcc-stream-utils)
-[![DevDependencies](https://img.shields.io/david/dev/JCCDex/jcc-stream-utils.svg?style=flat-square)](https://david-dm.org/JCCDex/jcc-stream-utils?type=dev)
 [![npm downloads](https://img.shields.io/npm/dm/jcc-stream-utils.svg)](http://npm-stat.com/charts.html?package=jcc-stream-utils)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
